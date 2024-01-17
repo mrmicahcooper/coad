@@ -1,0 +1,19 @@
+schemaVersion: 2.0.0
+metadata:
+  name: &name coad
+  version: 1.0.0
+components:
+  - name: *name
+    container:
+      # This will reference the image from Dockerhub
+      image: docker pull mrmicahcooper/code-server
+      #command: /start.sh #call the start command. Runs before start and 
+commands:
+  - id: clone
+    exec:
+      component: *name
+      commandLine: "touch foobar.txt && echo 'hello' > foobar.txt"
+      workingDir: $PROJECTS_ROOT
+events:
+  postStart:
+    - clone
