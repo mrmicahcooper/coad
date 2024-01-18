@@ -6,7 +6,7 @@ components:
   - name: *name
     container:
       # This will reference the image from Dockerhub
-      image: docker pull mrmicahcooper/code-server
+      image: docker.io/mrmicahcooper/code-server
       #command: /start.sh #call the start command. Runs before start and 
 commands:
   - id: clone
